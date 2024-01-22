@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://sx0dw0r4uaq7"]
+
+[ext_resource type="Texture2D" uid="uid://c5l1ccfu13d3v" path="res://icon.svg" id="1_yjfxp"]
+[ext_resource type="PackedScene" uid="uid://tmdy0vewuds5" path="res://scenes/wall/wall.tscn" id="2_lx15f"]
+[ext_resource type="PackedScene" uid="uid://2mpilwlj8svu" path="res://scenes/ball/ball.tscn" id="3_2583f"]
+
+[node name="Game" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(577, 324)
+scale = Vector2(9.03472, 5.05564)
+texture = ExtResource("1_yjfxp")
+
+[node name="Wall" parent="." instance=ExtResource("2_lx15f")]
+position = Vector2(578, 4)
+scale = Vector2(58.7817, 0.548557)
+
+[node name="Wall2" parent="." instance=ExtResource("2_lx15f")]
+position = Vector2(580, 651)
+scale = Vector2(58.3335, 0.550428)
+
+[node name="Ball" parent="." instance=ExtResource("3_2583f")]
+position = Vector2(581, 231)
