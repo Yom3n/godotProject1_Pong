@@ -3,14 +3,29 @@ using System;
 
 public partial class Ball : RigidBody2D
 {
-    [Export] private float Speed = 50;
+    [Export] public float Speed = 10;
 
+    [Export] public Vector2 MoveDirection;
+
+    public override void _Ready()
+    {
+        MoveDirection = new Vector2(Speed, Speed);
+    }
 
     public override void _Process(double delta)
     {
-        base._Process(delta);
-        // TODO Returns Kinematic collision that can be used to handle bouncing
-        // of the walls and sending signal on point gain 
-        MoveAndCollide(new Vector2((float)(Speed * delta), 0));
+        
+        KinematicCollision2D collision = MoveAndCollide(MoveDirection * Speed * (float)delta);
+        if (collision != null)
+        {
+            _handleCollision(collision);
+        }
+    }
+
+
+    private void _handleCollision(KinematicCollision2D collision)
+    {
+        GD.Print(collision.GetNormal());
+        MoveDirection = MoveDirection.Bounce(collision.GetNormal());
     }
 }

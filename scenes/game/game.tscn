@@ -20,4 +20,4 @@ position = Vector2(580, 651)
 scale = Vector2(58.3335, 0.550428)
 
 [node name="Ball" parent="." instance=ExtResource("3_2583f")]
-position = Vector2(581, 231)
+position = Vector2(637, 527)
