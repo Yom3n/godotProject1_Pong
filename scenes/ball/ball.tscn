@@ -4,17 +4,17 @@
 [ext_resource type="Texture2D" uid="uid://drivdn802cg4x" path="res://sprites/Circle.png" id="1_jl2by"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_al8hm"]
-radius = 2.38767
+radius = 2.40208
 
 [node name="Ball" type="RigidBody2D"]
-position = Vector2(-1, 0)
 gravity_scale = 0.0
 script = ExtResource("1_gjtma")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(10, 10)
+position = Vector2(1, 0)
+scale = Vector2(5, 5)
 shape = SubResource("CircleShape2D_al8hm")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.0228571, 0.0226316)
+scale = Vector2(0.012, 0.012)
 texture = ExtResource("1_jl2by")

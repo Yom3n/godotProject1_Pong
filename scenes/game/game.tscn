@@ -23,6 +23,7 @@ scale = Vector2(58.3335, 0.550428)
 
 [node name="Ball" parent="." instance=ExtResource("3_2583f")]
 position = Vector2(500, 392)
+Speed = 20.0
 
 [node name="Player" parent="." instance=ExtResource("4_uwrry")]
 position = Vector2(62, 324)
@@ -31,3 +32,4 @@ Speed = 500.0
 [node name="Enemy" parent="." node_paths=PackedStringArray("ObjectToFollow") instance=ExtResource("5_nx0hj")]
 position = Vector2(1046, 401)
 ObjectToFollow = NodePath("../Ball")
+Speed = 10.0
