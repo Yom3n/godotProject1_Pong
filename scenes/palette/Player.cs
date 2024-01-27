@@ -6,13 +6,13 @@ public partial class Player : Node2D
 {
     [Export] public float Speed = 50f;
 
-    private RigidBody2D _body;
+    private CharacterBody2D _body;
 
 
     public override void _Ready()
     {
         base._Ready();
-        _body = GetNode<RigidBody2D>("Palette");
+        _body = GetNode<CharacterBody2D>("Palette");
     }
 
     public override void _Process(double delta)
