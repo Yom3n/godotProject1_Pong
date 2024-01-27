@@ -4,21 +4,46 @@ using System.IO;
 
 public partial class Player : Node2D
 {
+    [Export] public float Speed = 50f;
+
     private RigidBody2D _body;
+
 
     public override void _Ready()
     {
         base._Ready();
         _body = GetNode<RigidBody2D>("Palette");
-        if (_body == null)
-        {
-            throw new FileNotFoundException();
-        }
     }
 
-    public override void _PhysicsProcess(double delta)
+    public override void _Process(double delta)
     {
-        base._PhysicsProcess(delta);
-        _body.MoveAndCollide(Vector2.Right * 10);
+        _handleMovement(delta);
+    }
+
+    private void _handleMovement(double delta)
+    {
+        Vector2 direction = _getMoveDirection();
+
+        if (direction == Vector2.Zero)
+        {
+            return;
+        }
+
+        _body.MoveAndCollide(direction * Speed * (float)delta);
+    }
+
+    private Vector2 _getMoveDirection()
+    {
+        Vector2 direction = new Vector2();
+        if (Input.IsActionPressed("move_up"))
+        {
+            direction = Vector2.Up;
+        }
+        else if (Input.IsActionPressed("move_down"))
+        {
+            direction = Vector2.Down;
+        }
+
+        return direction;
     }
 }

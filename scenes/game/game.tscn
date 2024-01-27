@@ -24,4 +24,5 @@ scale = Vector2(58.3335, 0.550428)
 position = Vector2(637, 527)
 
 [node name="Player" parent="." instance=ExtResource("4_uwrry")]
-position = Vector2(89, 346)
+position = Vector2(1079, 336)
+Speed = 500.0
