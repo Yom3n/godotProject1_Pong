@@ -25,7 +25,6 @@ public partial class Ball : RigidBody2D
 
     private void _handleCollision(KinematicCollision2D collision)
     {
-        GD.Print(collision.GetNormal());
         MoveDirection = MoveDirection.Bounce(collision.GetNormal());
     }
 }

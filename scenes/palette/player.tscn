@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://cwmjgiot11h00"]
+[gd_scene load_steps=3 format=3 uid="uid://cwmjgiot11h00"]
 
 [ext_resource type="Script" path="res://scenes/palette/Player.cs" id="1_vdldg"]
+[ext_resource type="PackedScene" uid="uid://dv4f0syk6suwl" path="res://scenes/palette/palette.tscn" id="2_2onna"]
 
 [node name="Player" type="Node2D"]
 script = ExtResource("1_vdldg")
+
+[node name="Palette" parent="." instance=ExtResource("2_2onna")]
